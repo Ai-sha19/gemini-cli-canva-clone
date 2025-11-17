@@ -1,0 +1,490 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, /* top-color */ #8B2CFE, /* mid-color */ #5934F9, /* bottom-color */ #179EB9);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Slightly reduced padding */
+    position: relative;
+    z-index: 10;
+}
+
+.logo-svg {
+    width: 85px;
+    height: auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+    nav li {
+        margin: 0 15px;
+    }
+
+    .actions {
+        display: flex; /* Ensure buttons are side-by-side */
+        align-items: center;
+        gap: 15px; /* Spacing between buttons */
+    }
+
+    .actions .signup {
+        background-color: #B39DDB; /* Lighter purple from image */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 450;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    }
+
+    .actions .login {
+        background-color: white;
+        color: black; /* Dark text for login button */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 450;
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    }
+
+    .nav-actions { /* Hide mobile nav actions on desktop */
+        display: none;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400; /* Reduced font weight */
+        font-family: 'Montserrat', sans-serif;
+    }
+.actions .signup {
+    background-color: #9D4CFE;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Slightly reduced padding */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 450;
+    font-size: 14px;
+}
+
+.actions .login {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px; /* Slightly reduced padding */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 450;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.hamburger {
+    display: none;
+    width: 24px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+
+.hamburger svg {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    flex-grow: 1; /* Allow main content to take available space */
+    display: flex;
+    align-items: center; /* Center hero content vertically */
+    justify-content: center; /* Center hero content horizontally */
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px; /* Reduced padding */
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(40px, 7vw, 88px); /* Responsive font size for h1 */
+    font-weight: 500;
+    margin: 0 0 20px; /* Reduced margin */
+    line-height: 1.05;
+}
+
+.hero p {
+    font-size: clamp(16px, 1.8vw, 20px); /* Responsive font size for p */
+    margin: 0 auto 30px; /* Reduced margin */
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 550px;
+}
+
+.cta-buttons .cta-primary {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500; /* Reduced font weight */
+    margin-right: 15px;
+}
+
+.cta-buttons .cta-secondary {
+    background: linear-gradient(to bottom, #3A3A3A, #5A5A5A); /* Dark gray gradient */
+    color: white; /* Keep font color white */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Thinner, subtle border */
+    padding: 18px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500; /* Reduced font weight */
+    /* Removed backdrop-filter */
+}
+
+.decorations {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.deco-shape {
+    position: absolute;
+    animation: float 8s ease-in-out infinite;
+    will-change: transform;
+}
+
+.shape-t {
+    left: 15%;
+    bottom: 20px;
+    background-color: #B2F3F6;
+    color: #005C69;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 12px;
+    transform: rotate(-10deg);
+    animation-delay: 1s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.shape-a {
+    left: 10%;
+    bottom: -10px;
+    color: #FF6A8B;
+    font-size: 100px;
+    font-weight: bold;
+    transform: rotate(15deg);
+    animation-delay: 0s;
+    opacity: 0.8;
+}
+
+.shape-grad-cap {
+    right: 10%;
+    bottom: 10px;
+    width: 120px;
+    height: 80px;
+    transform: rotate(15deg);
+    animation-delay: 0.5s;
+}
+
+.cap-top {
+    width: 120px;
+    height: 12px;
+    background: #A855F7;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.cap-body {
+    width: 90px;
+    height: 50px;
+    background: #8A2BE2;
+    margin: 0 auto;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+.tassel {
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    width: 5px;
+    height: 40px;
+    background: #FFD700;
+    border-radius: 2px;
+}
+
+
+.shape-triangle {
+    left: 75%;
+    bottom: 30px;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid #FFC107;
+    transform: rotate(-25deg);
+    animation-delay: 1.5s;
+    opacity: 0.9;
+}
+
+.shape-circle {
+    left: 80%;
+    bottom: -20px;
+    width: 70px;
+    height: 70px;
+    background: #4A24D1;
+    border-radius: 50%;
+    transform: rotate(20deg);
+    animation-delay: 2s;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(var(--initial-rotate, 0deg)); }
+    50% { transform: translateY(-25px) rotate(var(--initial-rotate, 0deg)); }
+    100% { transform: translateY(0px) rotate(var(--initial-rotate, 0deg)); }
+}
+
+
+@media (max-width: 1024px) {
+    /* .actions {
+        display: none;
+    } */
+
+    .hamburger {
+        display: block;
+    }
+
+    .actions .signup {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden by default */
+        width: 80%; /* Sidebar width */
+        max-width: 300px; /* Max width for larger small screens */
+        height: 100vh;
+        background: linear-gradient(to bottom, #e0f7fa, white); /* Light blue to white gradient */
+        z-index: 100; /* High z-index to be on top */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        transition: left 0.3s ease-in-out;
+        overflow-y: auto; /* Enable scrolling for long content */
+        padding-top: 20px; /* Space from the top */
+        padding-bottom: 20px; /* Space from the bottom */
+        display: flex; /* Added */
+        flex-direction: column; /* Added */
+    }
+
+    nav.active {
+        left: 0; /* Slide in */
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 101; /* Above nav */
+    }
+
+    .close-btn::before,
+    .close-btn::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #333; /* Dark color for contrast on white background */
+        top: 50%;
+        left: 0;
+        transform-origin: center;
+    }
+
+    .close-btn::before {
+        transform: rotate(45deg);
+    }
+
+    .close-btn::after {
+        transform: rotate(-45deg);
+    }
+
+    nav ul {
+        list-style: none;
+        padding-right: 20px; /* Keep right padding for arrow */
+        padding-left: 0; /* Remove left padding */
+        margin-top: 40px; /* Space from the close button */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Allow ul to grow and push nav-actions down */
+        overflow-y: auto; /* Added here for scrolling */
+        align-items: flex-start; /* Ensure children are left-aligned */
+    }
+
+    nav li {
+        margin-bottom: 15px; /* Vertical spacing between links */
+        width: 100%; /* Ensure full width */
+    }
+
+    nav a {
+        color: #333; /* Dark text color */
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px 0; /* Reset padding */
+        width: 100%; /* Take full width */
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Increased space between text and arrow */
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .nav-text {
+        margin-right: auto; /* Push arrow to the right */
+    }
+
+    .arrow-icon {
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #333;
+        border-right: 2px solid #333;
+        transform: rotate(45deg);
+        display: inline-block;
+    }
+
+    .nav-actions {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: auto; /* Push to the bottom */
+    }
+
+    .nav-actions .login,
+    .nav-actions .signup {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        margin-left: 0; /* Reset margin */
+    }
+
+    .nav-actions .login {
+        background-color: #9D4CFE; /* Purple */
+        color: white;
+    }
+
+    .nav-actions .signup {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc; /* Add a border for the white button */
+    }
+
+    body.nav-open .hero {
+        filter: blur(5px); /* Apply blur */
+        opacity: 0.5; /* Reduce opacity */
+        pointer-events: none; /* Disable interaction with blurred content */
+        transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Further reduced padding */
+    }
+
+    
+    .hero {
+        padding: 30px 20px; /* Further reduced padding */
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 48px); /* Adjusted clamp for mobile */
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: clamp(14px, 3vw, 18px); /* Adjusted clamp for mobile */
+        max-width: 90%;
+        margin-bottom: 25px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons button {
+        width:60%;
+        margin: 8px auto;
+        font-size: 16px;
+        padding: 12px 25px;
+        
+    }
+}
+
+@media (min-width: 1025px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        margin-left: 40px; /* Adjusted margin to be closer to logo */
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav li {
+        margin: 0 20px;
+    }
+}
